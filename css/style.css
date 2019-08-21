@@ -1,0 +1,46 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body {font-family: Arial, Verdana, sans-serif; 	background-color: lightblue;}
+p {margin: 1.3em 0}
+
+h1 {font-size: 2.2em}
+
+ol {margin-left: 30px;}
+.main {
+	margin:10px auto;
+	width: 90%;
+	padding: 10px;
+	border-radius:5px;
+	background-color: white;
+}
+
+.txtRojoGrande {margin: 20px 0; color: red; font-size: 2em}
+
+.aclaracion {font-size: 0.8em; color: gray;}
+input, button {
+    border-radius:3px;
+    border:1px solid gray;
+    padding: 5px;
+}
+
+pre {
+    background: lightgray;
+    word-wrap: break-word;
+    margin: 10px 0;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+pre, code {
+    font-family: 'Monaco', courier, monospace;
+}
+
+textarea {
+	padding:5px;
+	background: lightgray;
+	color:black;
+	width: 100%;
+	border: none;
+}

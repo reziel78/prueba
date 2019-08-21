@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="timepicker/jquery.timepicker.css">
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="timepicker/jquery.timepicker.js"></script>
+</head>
+<body>
+<div class="main">
+<h1>Ejemplos del plugin DATEPICKER</h1>
+<p><a href="https://github.com/jonthornton/jquery-timepicker#timepicker-plugin-for-jquery" target="_blank">Enlace a la página del autor</a>
+
+	<h2>Establecer hora actual</h2>
+	<p><input id="setTimeExample" type="text" /> <button id="setTimeButton" type="button">Hora actual</button></p>
+
+	<h2>Desactivar un rango de horas</h2>
+	<p><input id="disableTimeRangesExample" type="text" /><br>
+	<span class="aclaracion">Se ha desactivado de 1 a 2am y de 3 a 4:01am</span></p>
+<hr>
+<h2 class="txtRojoGrande">Instalar el plugin</h2>
+
+<h3>1. Descargar archivo ZIP del plugin</h3>
+<p>Descargamos el archivo de la página del autor. Descomprimimos el archivo y veremos una carpeta con un nombre bastante largo. Le cambiamos el nombre de la carpeta principal a "timepicker". </p>
+<h3>2. Código para poner en el HEAD de nuestra página</h3>
+<p>Ahora debemos insertar en la cabecera (HEAD) de nuestra página web varios enlaces:</p>
+<ol>
+	<li>El enlace de la librería principal JQUERY.</li>
+	<li>Enlace al archivo Javascript del plugin.</li>
+	<li>Enlace al archivo CSS del plugin (en algunos plugin no hace falta).</li>
+</ol>
+<p>De todas formas, hay que leer la documentación del Plugin para que nos indique qué archivos hay que poner en el HEAD, porque cada Plugin es diferente.</p>
+<pre class="code"><textarea rows="12">
+<!-- Llamada a la librería JQUERY desde un CDN -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<!-- Enlace al archivo Javascript del plugin -->
+<script type="text/javascript" src="timepicker/jquery.timepicker.js"></script>
+  
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="timepicker/jquery.timepicker.css">
+</textarea></pre>
+
+<h3>3. Insertar los objetos HTML </h3>
+<p>Debemos consultar la documentación del autor para saber cómo activar los eventos del plugin. Normalmente, se le asigna un "id" a la etiqueta HTML donde ocurrirá el cambio y, en el mismo documento HTML, se le añade un < script > que ejecuta la acción. En este ejemplo, la id #setTimeExample es la que identifica al elemento INPUT que activa el desplegable con las horas.</p>
+<pre class="code"><textarea rows="10">
+<h2>Establecer hora actual</h2>
+<p><input id="setTimeExample" type="text" /> <button id="setTimeButton" type="button">Hora actual</button></p>
+
+<script>
+// Ejemplo para que aparezca la hora actual en el desplegable
+	$('#setTimeExample').timepicker();
+	$('#setTimeButton').on('click', function (){
+	$('#setTimeExample').timepicker('setTime', new Date());
+});</script>
+</textarea>
+</div>
+
+<!-- líneas de código para que el plugin funcione. Se suelen colocar al final de la página
+para optimizar la velocidad de carga de la página -->
+<script>
+// Ejemplo para que aparezca la hora actual en el desplegable
+	$('#setTimeExample').timepicker();
+	$('#setTimeButton').on('click', function (){
+	$('#setTimeExample').timepicker('setTime', new Date());
+});
+
+// Desabilitar un rango de fechas
+	$('#disableTimeRangesExample').timepicker({
+	'disableTimeRanges': [
+		['1am', '2am'],
+		['3am', '4:01am']
+	]
+});
+</script>
+
+</body>
+</html>
